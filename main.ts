@@ -27,7 +27,9 @@ input.onButtonPressed(Button.A, function () {
         PingUnit.Centimeters
     )
     basic.clearScreen()
-    if (distanceToObject > 10) {
+    basic.showNumber(distanceToObject)
+    basic.showString('cm')
+    if (distanceToObject < 10) {
         // if distance is less than to 10 cm
         basic.showIcon(IconNames.No)
         neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
@@ -43,4 +45,12 @@ input.onButtonPressed(Button.A, function () {
         neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
     }
     neopixelStrip.show()
+    basic.pause(5000)
+    basic.clearScreen()
+    neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+    neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+    neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+    neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
+    neopixelStrip.show()
+    basic.showIcon(IconNames.Happy)
 })
