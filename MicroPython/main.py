@@ -8,7 +8,6 @@ This program uses if, else statements with hardware.
 from microbit import *
 import neopixel
 
-
 class HCSR04:
     # this class abstracts out the functionality of the HC-SR04 and
     #   returns distance in mm
@@ -21,7 +20,7 @@ class HCSR04:
 
     def distance_mm(self):
         spi.init(baudrate=125000, sclk=self.sclk_pin,
-                mosi=self.trigger_pin, miso=self.echo_pin)
+            mosi=self.trigger_pin, miso=self.echo_pin)
         pre = 0
         post = 0
         k = -1
@@ -39,7 +38,7 @@ class HCSR04:
             # find first non full high value afterwards
             try:
                 k, value = next((ind, v)
-                                for ind, v in enumerate(resp[i:length - 2]) if resp[i + ind + 1] == 0)
+                    for ind, v in enumerate(resp[i:length - 2]) if resp[i + ind + 1] == 0)
                 post = bin(value).count("1") if k else 0
                 k = k + i
             except StopIteration:
@@ -48,8 +47,6 @@ class HCSR04:
         return dist
 
 
-
-sonar = HCSR04()
 
 # variables
 distanceToObject = 0
