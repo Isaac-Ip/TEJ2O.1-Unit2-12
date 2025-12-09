@@ -10,8 +10,8 @@ import neopixel
 from hcsr04 import HCSR04
 
 # variables
-sensor = HCSR04(trigger_pin=12, echo_pin=13)
-distanceToObject = sensor.distance_mm() / 10
+sonar = HCSR04(trigger_pin=12, echo_pin=13)
+distanceToObject = sonar.distance_mm() / 10
 neopixelStrip = neopixel.NeoPixel(pin16, 4)
 
 # cleanup
