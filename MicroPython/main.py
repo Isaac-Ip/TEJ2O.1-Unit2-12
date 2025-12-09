@@ -7,9 +7,7 @@ This program uses if, else statements with hardware.
 
 from microbit import *
 import neopixel
-
 from hcsr04 import HCSR04
-
 
 # variables
 sensor = HCSR04(trigger_pin=12, echo_pin=13)
